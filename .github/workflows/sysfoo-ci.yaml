@@ -34,7 +34,7 @@ jobs:
       - name: download-artifact
         uses: actions/download-artifact@v5
         with:
-          name: my-artifact
+          name: sysfoo-artifact
           path: C:/Users/kkzh451/Downloads
       - name: Display structure of downloaded files
         run: ls -R C:/Users/kkzh451/Downloads
