@@ -1,5 +1,8 @@
 name: sysfoo-ci-pipeline
-on: push
+on:
+  push:
+    branches:
+      - 'master'
 jobs:
   sysfooci-job:
     runs-on: ubuntu-latest
@@ -21,3 +24,10 @@ jobs:
 
       - name: list-files
         run: ls -lrt target
+
+      - name: upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sysfoo-artifact
+          path: target/**.war
+      
